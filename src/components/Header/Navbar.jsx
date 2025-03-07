@@ -20,18 +20,17 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="bg-white shadow-2xl py-3 md:px-[10rem] fixed w-screen top-0">
+    <nav className="fixed top-0 w-screen bg-white py-3 shadow-2xl md:px-[10rem]">
       {/* Sidebar */}
       <ul
-        className={`fixed top-0 right-0 h-screen w-[300px] z-[999] bg-white/20 backdrop-blur-md shadow-2xl flex flex-col items-start justify-start 
-           transition-transform duration-300 ease-in-out ${
-             isSidebarOpen ? "block" : "hidden"
-           }`}
+        className={`fixed top-0 right-0 z-[999] flex h-screen w-[300px] flex-col items-start justify-start bg-white/20 shadow-2xl backdrop-blur-md transition-transform duration-300 ease-in-out ${
+          isSidebarOpen ? "block" : "hidden"
+        }`}
       >
-        <li className="h-[50px] relative">
+        <li className="relative h-[50px]">
           <button
             onClick={toggleSidebar}
-            className="flex h-full px-8 no-underline items-center hover:bg-gray-100 mt-4"
+            className="mt-4 flex h-full items-center px-8 no-underline hover:bg-gray-100"
           >
             <CloseIcon />
           </button>
@@ -40,7 +39,7 @@ export default function Navbar() {
           <li key={link} className="h-[50px]">
             <a
               href="#"
-              className="flex h-full px-8 no-underline items-center hover:bg-gray-100"
+              className="flex h-full items-center px-8 no-underline hover:bg-gray-100"
               onClick={toggleSidebar}
             >
               {link}
@@ -50,13 +49,13 @@ export default function Navbar() {
       </ul>
 
       {/* Main Navigation */}
-      <ul className="w-full list-none flex justify-end items-center mx-1">
+      <ul className="mx-1 flex w-full list-none items-center justify-end">
         <li className="nav-item h-[50px]">
           <a
             href="#"
-            className="h-full px-8 flex flex-col justify-center items-center"
+            className="flex h-full flex-col items-center justify-center px-8"
           >
-            <span className="text-xl tracking-wide font-bold uppercase">
+            <span className="text-xl font-bold tracking-wide uppercase">
               De
               <span className="bg-linear-to-r from-[#0d0c0c] to-[#ea1f1f] bg-clip-text text-transparent">
                 v
@@ -72,7 +71,7 @@ export default function Navbar() {
           <li key={link} className="h-[50px]">
             <a
               href="#"
-              className="hidden md:flex md:h-full md:px-8 no-underline md:items-center hover:bg-gray-100"
+              className="hidden font-bold text-gray-800 no-underline hover:bg-gray-100 md:flex md:h-full md:items-center md:px-8"
             >
               {link}
             </a>
@@ -81,7 +80,7 @@ export default function Navbar() {
         <li className="h-[50px]">
           <button
             onClick={toggleSidebar}
-            className="md:hidden flex h-full px-8 no-underline items-center hover:bg-gray-100"
+            className="flex h-full items-center px-8 no-underline hover:bg-gray-100 md:hidden"
           >
             <MenuIcon />
           </button>
