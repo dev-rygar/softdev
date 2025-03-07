@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+select {
+  color: white !important; /* Forces white text */
+  background-color: #ea1f1f !important; /* Forces red background */
+}
+
+option {
+  color: white !important; /* Ensures white text inside dropdown */
+  background-color: #ea1f1f !important; /* Fixes background inconsistency */
+}
+
+@layer base {
+  body {
+    @apply min-h-screen text-[#0d0c0c];
+  }
+}
+
+@layer components {
+  .nav-link:last-child {
+    @apply mr-3;
+  }
+
+  .nav-item:first-child {
+    @apply mr-auto;
+  }
+}
